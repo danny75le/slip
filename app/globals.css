@@ -1,26 +1,278 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-display: var(--font-fraunces), "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui,
+    -apple-system, sans-serif;
+  --font-mono: var(--font-jet), "JetBrains Mono", ui-monospace, "SF Mono",
+    Menlo, monospace;
+
+  --color-parchment: #f2f0eb;
+  --color-parchment-2: #e8e4d8;
+  --color-cream: #faf9f6;
+  --color-foam: #d4e9e2;
+  --color-ink: #0e2c24;
+  --color-ink-soft: #244a40;
+  --color-mocha: #6e6a5e;
+  --color-caramel: #a8a89a;
+  --color-green: #006241;
+  --color-green-2: #00754a;
+  --color-green-3: #1e3932;
+  --color-gold: #cba258;
+  --color-gold-2: #d8b97a;
+  --color-bean: #1a332c;
+  --color-danger: #a23e2a;
+  --color-danger-2: #c45434;
+  --color-line: #dcd6c8;
+  --color-line-soft: #e8e3d4;
+
+  --color-night: #0a1f19;
+  --color-night-2: #142b24;
+  --color-night-3: #1e3932;
+  --color-night-line: #2d4a42;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  color-scheme: light dark;
+  --grain:
+    radial-gradient(rgba(14, 44, 36, 0.045) 1px, transparent 1px),
+    radial-gradient(rgba(14, 44, 36, 0.035) 1px, transparent 1px);
+  --grain-size: 3px 3px, 7px 7px;
+  --grain-pos: 0 0, 1px 2px;
+  --card-edge: rgba(250, 249, 246, 0.95);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --grain:
+      radial-gradient(rgba(212, 233, 226, 0.035) 1px, transparent 1px),
+      radial-gradient(rgba(212, 233, 226, 0.022) 1px, transparent 1px);
+    --card-edge: rgba(20, 43, 36, 0.95);
+  }
+}
+
+html,
+body {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: var(--color-night);
+    color: var(--color-cream);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv02", "cv11";
+  background-image:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(0, 98, 65, 0.07),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 88% 92%,
+      rgba(203, 162, 88, 0.10),
+      transparent 42%
+    ),
+    var(--grain);
+  background-size: auto, auto, var(--grain-size);
+  background-position: 0 0, 0 0, var(--grain-pos);
+  background-attachment: fixed, fixed, fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image:
+      radial-gradient(
+        circle at 12% 8%,
+        rgba(0, 117, 74, 0.18),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 88% 92%,
+        rgba(216, 185, 122, 0.08),
+        transparent 42%
+      ),
+      var(--grain);
+  }
+}
+
+::selection {
+  background: var(--color-green);
+  color: var(--color-cream);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "salt";
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+
+@utility tracking-display {
+  letter-spacing: -0.025em;
+}
+
+@utility small-caps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+}
+
+@utility receipt-divider {
+  background-image: linear-gradient(
+    to right,
+    currentColor 0,
+    currentColor 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  height: 1px;
+}
+
+@utility perforated-top {
+  --perf-color: var(--color-parchment);
+  background:
+    radial-gradient(
+        circle at 6px 0,
+        transparent 5px,
+        var(--perf-color) 5px
+      )
+      repeat-x;
+  background-size: 14px 12px;
+}
+
+@utility perforated-bottom {
+  --perf-color: var(--color-parchment);
+  background:
+    radial-gradient(
+        circle at 6px 12px,
+        transparent 5px,
+        var(--perf-color) 5px
+      )
+      repeat-x;
+  background-size: 14px 12px;
+}
+
+@utility ticket-shadow {
+  box-shadow:
+    0 1px 0 rgba(34, 18, 8, 0.04),
+    0 4px 24px -8px rgba(34, 18, 8, 0.10),
+    0 18px 40px -24px rgba(34, 18, 8, 0.18);
+}
+
+@utility brand-glow {
+  box-shadow:
+    0 1px 0 rgba(212, 233, 226, 0.35) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.22) inset,
+    0 6px 16px -6px rgba(0, 98, 65, 0.5),
+    0 14px 32px -16px rgba(0, 98, 65, 0.4);
+}
+
+@utility gold-glow {
+  box-shadow:
+    0 1px 0 rgba(255, 240, 210, 0.4) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.15) inset,
+    0 6px 16px -6px rgba(203, 162, 88, 0.5),
+    0 14px 32px -16px rgba(203, 162, 88, 0.4);
+}
+
+@keyframes steam-rise {
+  0% {
+    transform: translateY(2px) scaleX(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-14px) scaleX(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes brand-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 1px 0 rgba(212, 233, 226, 0.35) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.22) inset,
+      0 6px 16px -6px rgba(0, 98, 65, 0.5),
+      0 14px 32px -16px rgba(0, 98, 65, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 1px 0 rgba(212, 233, 226, 0.35) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.22) inset,
+      0 8px 22px -6px rgba(0, 117, 74, 0.7),
+      0 18px 40px -16px rgba(0, 117, 74, 0.5);
+  }
+}
+
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: rotate(-8deg) scale(1.6);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-3deg) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+}
+
+@keyframes ink-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-ink-rise {
+  animation: ink-rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@utility animate-stamp {
+  animation: stamp-in 450ms cubic-bezier(0.2, 0.9, 0.2, 1.4) both;
+}
+
+@utility animate-brand-pulse {
+  animation: brand-pulse 2.6s ease-in-out infinite;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+}
+
+input[type="text"],
+input:not([type]),
+textarea {
+  font-feature-settings: "ss01";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
