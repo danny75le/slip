@@ -23,14 +23,14 @@ const jet = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Drink Card — your usual, on a card",
+  title: "Slip — your usual, on a card",
   description:
-    "Show your customized coffee order to the barista — no missed modifiers.",
-  applicationName: "Drink Card",
+    "Save your favorite customized drinks and food, then show your slip across the counter — no missed modifiers.",
+  applicationName: "Slip",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Drink Card",
+    title: "Slip",
   },
 };
 

@@ -27,8 +27,8 @@ export default function NewDrinkPage() {
           <span className="italic text-gold">order</span>.
         </h1>
         <p className="mt-3 max-w-md text-[14px] text-ink-soft dark:text-caramel">
-          Name it, list the modifiers the barista needs, and you&apos;re done.
-          Lives only on this device — no account, no cloud.
+          Name it, list the spec the counter needs, and you&apos;re done. Lives
+          only on this device — no account, no cloud.
         </p>
       </div>
 

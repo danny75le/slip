@@ -18,12 +18,12 @@ export function DrinkCard({ drink }: { drink: Drink }) {
         <header className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <p className="small-caps text-[11px] text-mocha dark:text-caramel">
-              barista order ticket
+              your order slip
             </p>
             <h2 className="font-display tracking-display mt-2 break-words text-[34px] font-medium leading-[0.98] text-ink sm:text-[42px] dark:text-cream">
               {drink.name || (
                 <span className="italic text-mocha dark:text-caramel">
-                  Untitled drink
+                  Untitled slip
                 </span>
               )}
             </h2>
@@ -78,7 +78,7 @@ export function DrinkCard({ drink }: { drink: Drink }) {
         {drink.notes && drink.notes.trim().length > 0 && (
           <div className="relative mt-6 rounded-2xl border border-gold/40 bg-gold/[0.10] px-4 py-3.5 dark:border-gold-2/45 dark:bg-gold-2/[0.10]">
             <p className="small-caps mb-1 text-[10px] font-semibold text-gold dark:text-gold-2">
-              note for the barista
+              note for the counter
             </p>
             <p className="whitespace-pre-wrap text-[15px] leading-snug text-ink dark:text-cream">
               {drink.notes}

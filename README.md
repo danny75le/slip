@@ -1,6 +1,10 @@
-# starbucks-extension-app
+# Slip
 
-A [Next.js](https://nextjs.org) 16 application built with the App Router, React 19, TypeScript, and Tailwind CSS v4.
+A client-only PWA for saving favorite customized restaurant orders — drinks
+and food, any restaurant — and showing them across the counter. Built with
+[Next.js](https://nextjs.org) 16 (App Router), React 19, TypeScript, and
+Tailwind CSS v4. No backend, no accounts: orders live in `localStorage` and
+sharing encodes the order in a URL hash.
 
 ## Requirements
 

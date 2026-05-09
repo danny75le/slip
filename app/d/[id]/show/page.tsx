@@ -116,13 +116,13 @@ export default function BaristaViewPage() {
             className={`small-caps text-[11px] ${muted}`}
             style={{ animationDelay: "0ms" }}
           >
-            for the barista
+            for the counter
           </p>
           <h1
             className="font-display tracking-display animate-ink-rise mt-2 break-words text-[56px] font-medium leading-[0.92] sm:text-[88px] md:text-[104px]"
             style={{ animationDelay: "60ms" }}
           >
-            {drink.name || "Untitled drink"}
+            {drink.name || "Untitled slip"}
           </h1>
         </div>
 
@@ -164,7 +164,7 @@ export default function BaristaViewPage() {
                 dark ? "text-gold-2" : "text-gold"
               }`}
             >
-              ⚑ note for the barista
+              ⚑ note for the counter
             </div>
             <p className="whitespace-pre-wrap text-[22px] leading-snug sm:text-[28px]">
               {drink.notes}

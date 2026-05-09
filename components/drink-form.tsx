@@ -62,15 +62,15 @@ export function DrinkForm({
 
       <Field
         id="drink-notes"
-        label="Note for the barista"
-        hint="Optional. Stir gently, light foam, blended, the works."
+        label="Note for the counter"
+        hint="Optional. Stir gently, light foam, sauce on the side — anything you'd otherwise have to say out loud."
       >
         <textarea
           id="drink-notes"
           value={draft.notes ?? ""}
           onChange={(e) => setDraft({ ...draft, notes: e.target.value })}
           rows={3}
-          placeholder="Anything else: blended, light foam on top, etc."
+          placeholder="Anything else — blended, light foam, sauce on the side."
           className="w-full resize-none rounded-2xl border border-line bg-cream/80 px-4 py-3.5 text-[15px] leading-relaxed text-ink placeholder:text-mocha/60 focus:border-green focus:outline-none focus:ring-4 focus:ring-green/15 dark:border-night-line dark:bg-night-2/80 dark:text-cream dark:placeholder:text-caramel/60 dark:focus:border-green-2 dark:focus:ring-green-2/15"
         />
       </Field>

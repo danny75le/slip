@@ -1,8 +1,17 @@
-# Drink Card
+# Slip
 
 @AGENTS.md
 
-A client-only PWA that shows a customized coffee order to a barista. **No backend, no database, no auth, no API routes** — and please don't add any without reason.
+A client-only PWA for saving favorite customized restaurant orders — drinks
+and food, any restaurant — and showing them across the counter. **No backend,
+no database, no auth, no API routes** — and please don't add any without
+reason.
+
+> Domain note: the codebase still uses `Drink` / `drink-card.tsx` / `listDrinks`
+> as the internal vocabulary because the data model started narrow. The
+> user-visible product is **Slip**, and the data model will be generalised to
+> a neutral noun (likely `order` or `slip`) in a follow-up — keep this in mind
+> when you read or extend the code.
 
 ## Verify
 
@@ -34,7 +43,7 @@ A client-only PWA that shows a customized coffee order to a barista. **No backen
 - [app/new/page.tsx](app/new/page.tsx) — create flow
 - [app/d/[id]/page.tsx](app/d/[id]/page.tsx) — detail + share
 - [app/d/[id]/edit/page.tsx](app/d/[id]/edit/page.tsx) — edit
-- [app/d/[id]/show/page.tsx](app/d/[id]/show/page.tsx) — full-screen barista view (uses Wake Lock API)
+- [app/d/[id]/show/page.tsx](app/d/[id]/show/page.tsx) — full-screen "show across the counter" view (uses Wake Lock API)
 - [app/shared/page.tsx](app/shared/page.tsx) — landing for incoming `/shared#data=...` links
 - [app/settings/page.tsx](app/settings/page.tsx) — JSON export/import, reset
 - [components/](components/) — `DrinkCard` (presentational), `DrinkForm`, `ModifierRowEditor`, `InstallPrompt`, `ServiceWorkerRegister`

@@ -51,10 +51,10 @@ export function InstallPrompt() {
         </span>
         <div className="min-w-0 flex-1">
           <p className="small-caps text-[10px] text-green dark:text-green-2">
-            tip · install the card
+            tip · install slip
           </p>
           <p className="mt-0.5 text-[14px] font-medium text-ink dark:text-cream">
-            Add Drink Card to your Home Screen.
+            Add Slip to your Home Screen.
           </p>
           <p className="mt-1 text-[13px] leading-relaxed text-ink-soft dark:text-caramel">
             In Safari, tap{" "}
@@ -62,7 +62,7 @@ export function InstallPrompt() {
               ↑
             </span>{" "}
             then choose <em className="font-medium">Add to Home Screen</em>.
-            Saved drinks stay safe and the app opens offline.
+            Your saved slips stay safe and the app opens offline.
           </p>
           <button
             type="button"

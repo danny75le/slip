@@ -22,14 +22,13 @@ export default function HomePage() {
           <p className="small-caps text-[11px] font-medium text-mocha dark:text-caramel">
             est. for your usual
           </p>
-          <h1 className="font-display tracking-display mt-1 text-[44px] font-medium leading-[0.95] text-ink sm:text-[56px] md:text-[72px] dark:text-cream">
-            Drink
-            <span className="italic text-gold">.</span>
-            <br className="md:hidden" />
-            <span className="italic font-light text-ink-soft md:ml-2 dark:text-caramel">
-              Card
-            </span>
+          <h1 className="font-display tracking-display mt-1 text-[64px] font-medium italic leading-[0.95] text-ink sm:text-[88px] md:text-[112px] dark:text-cream">
+            Slip
+            <span className="not-italic text-gold">.</span>
           </h1>
+          <p className="mt-2 text-[13px] text-ink-soft sm:text-[14px] dark:text-caramel">
+            Your usual — drinks, food, anywhere — on a card.
+          </p>
         </div>
         <div className="flex items-center gap-2">
           <Link
@@ -37,7 +36,7 @@ export default function HomePage() {
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-green px-5 py-3 text-[14px] font-semibold text-cream brand-glow transition hover:bg-green-2 active:scale-[0.98]"
           >
             <span aria-hidden className="text-base leading-none">+</span>
-            New drink
+            New slip
           </Link>
         <Link
           href="/settings"
@@ -78,8 +77,7 @@ export default function HomePage() {
         <>
           <div className="mb-4 flex items-baseline justify-between">
             <p className="small-caps text-[11px] text-mocha dark:text-caramel">
-              the menu — {drinks.length}
-              {drinks.length === 1 ? " card" : " cards"}
+              your slips — {drinks.length} saved
             </p>
             <p className="font-mono text-[10px] uppercase tracking-widest text-mocha/60 dark:text-caramel/60">
               tap to open
@@ -95,11 +93,11 @@ export default function HomePage() {
 
       <Link
         href="/new"
-        aria-label="New drink"
+        aria-label="New slip"
         className="animate-brand-pulse fixed bottom-6 right-5 z-30 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green text-cream brand-glow transition active:scale-95 sm:right-8 sm:h-[72px] sm:w-[72px] md:hidden"
       >
         <span className="font-display text-3xl leading-none">+</span>
-        <span className="sr-only">New drink</span>
+        <span className="sr-only">New slip</span>
       </Link>
     </main>
   );
@@ -179,11 +177,12 @@ function EmptyState() {
           a clean counter
         </p>
         <h2 className="font-display tracking-display mt-2 text-3xl font-medium italic text-ink dark:text-cream">
-          No drinks yet.
+          No slips yet.
         </h2>
         <p className="mx-auto mt-3 max-w-sm text-[14px] leading-relaxed text-ink-soft dark:text-caramel">
-          Add your first card and never describe a venti-half-sweet-oat-with-extra-foam from
-          memory again.
+          Save your first order — a venti-half-sweet-oat with extra foam, the
+          Tuesday burrito, your kid&apos;s pizza spec — and never describe it
+          from memory again.
         </p>
         <div
           aria-hidden

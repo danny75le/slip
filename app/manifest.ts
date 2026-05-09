@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Drink Card",
-    short_name: "Drink Card",
+    name: "Slip — your usual, on a card",
+    short_name: "Slip",
     description:
-      "Show your customized coffee order to the barista — no missed modifiers.",
+      "Save your favorite customized drinks and food, then show your slip across the counter.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#0f0f0f",
+    background_color: "#f2f0eb",
+    theme_color: "#006241",
     orientation: "portrait",
     icons: [
       { src: "/icon", sizes: "512x512", type: "image/png", purpose: "any" },

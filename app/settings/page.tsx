@@ -89,8 +89,8 @@ export default function SettingsPage() {
 
       <Section
         eyebrow="01 · backup"
-        title="Keep your drinks safe"
-        body="Drink Card lives only on this device. Export a JSON backup anytime, and reimport it on a new phone."
+        title="Keep your slips safe"
+        body="Slip lives only on this device. Export a JSON backup anytime, and reimport it on a new phone."
       >
         <div className="flex flex-wrap gap-3">
           <button

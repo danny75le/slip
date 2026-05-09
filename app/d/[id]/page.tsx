@@ -89,7 +89,7 @@ export default function DrinkDetailPage() {
             <path d="m9 7 3-3 3 3" />
             <rect x="4" y="10" width="16" height="11" rx="2" />
           </svg>
-          Show to barista
+          Show across the counter
           <span aria-hidden className="ml-1 transition group-hover:translate-x-0.5">
             →
           </span>
