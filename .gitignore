@@ -40,5 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Claude Code local settings
-.claude/settings.local.json
+# Local agent / IDE working state
+.claude/
+*.local.md
+
+# Local-only design and planning notes
+docs/plans/
+docs/superpowers/
